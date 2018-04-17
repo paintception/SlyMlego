@@ -248,8 +248,9 @@ else:
     model.compile(
         loss='mean_squared_error', # accuracy, mean_squared_logarithmic_error, mean_squared_error
         optimizer='adam',
-        metrics=['accuracy']) # just add some metric display to the loss one
-
+        ) # no keras metrics should be used since we are dealing with a regression problem. 
+          # the performance of the model is given by the MSE itself.
+    
     #@modelend
 
     plot_model(model, to_file=Const.MODELFILE+'.png', show_shapes=True, show_layer_names=True)
